@@ -10,9 +10,9 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { loading, error, user } = useSelector((state: any) => state.loginState);
+  
   const passwordRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
-  const inputs = [passwordRef, emailRef];
 
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
@@ -31,7 +31,7 @@ const Login = () => {
   useEffect(() => {
     if (user){
       navigate("/");
-    } 
+    }
   }, [user, navigate]);
 
   return (
@@ -40,7 +40,7 @@ const Login = () => {
         <Form
           tag={"Sign In!"}
           config={formConfig}
-          inputs={inputs}
+          inputs={[passwordRef, emailRef]}
           handleSubmit={handleSubmit}
         />
         {error ? (
