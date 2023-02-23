@@ -33,7 +33,12 @@ const Register = () => {
   return (
     <PageLayout>
       <div>
-        <Form tag={"Create your account!"} config={formConfig} inputs={refs} handleSubmit={handleSubmit} />
+        <Form 
+          tag={"Create your account!"} 
+          config={formConfig} 
+          inputs={refs} 
+          handleSubmit={handleSubmit} 
+        />
         {error ? (
           <h2>{error.response.data.errors[0]}</h2>
         ) : loading ? (

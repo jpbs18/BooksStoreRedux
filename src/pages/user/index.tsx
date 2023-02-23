@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { loginUserFromCookiesAction } from "../../redux/actions/loginActions";
 import { userUpdateAction } from "../../redux/actions/userActions";
 import { addBookAction } from "../../redux/actions/booksActions";
+import { Container } from "./style";
 
 const User = () => {
   const dispatch = useDispatch();
@@ -62,7 +63,7 @@ const User = () => {
 
   return (
     <PageLayout>
-      <div style={{display: "flex"}}>
+      <Container>
         {user ? (
           <>
             <UserProfile user={user} />
@@ -82,7 +83,7 @@ const User = () => {
         ) : (
           <h2>Sign up if you want to update credentials.</h2>
         )}
-      </div>
+      </Container>
     </PageLayout>
   );
 };
