@@ -1,6 +1,6 @@
 import { useCallback, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { BookCover, Button, Form } from "../../components";
+import { Button, Form } from "../../components";
 import PageLayout from "../../layout/pageLayout";
 import { configUpdateForm } from "./configForm";
 import { BooksContainer } from "./styles";
