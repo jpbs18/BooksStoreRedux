@@ -6,4 +6,9 @@ export const BookList = styled.ul`
     padding: 10px;
     margin:0;
     gap:10px;
+    list-style: none;
+
+    img{
+        width:80%;
+    }
 `

@@ -56,7 +56,11 @@ const User = () => {
         book_cover: bookCover.current!.value,
       };
 
-      dispatch<any>(addBookAction(newBook))
+      dispatch<any>(addBookAction(newBook));
+      bookTitle.current!.value = "";
+      bookYear.current!.value = "";
+      bookDescription.current!.value = "";
+      bookCover.current!.value = "";
     },
     [dispatch]
   );

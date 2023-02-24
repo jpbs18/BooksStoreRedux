@@ -5,9 +5,6 @@ export const BookContainer = styled.li`
    flex-direction: column;
    justify-content: center;
    align-items: center;
-
-   img {
-    width:65%;
-    height:80%
-   }
+   width:100%;
+   height:80%
 `

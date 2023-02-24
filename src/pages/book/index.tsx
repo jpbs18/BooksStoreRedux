@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { BookCover, Button, Form } from "../../components";
 import PageLayout from "../../layout/pageLayout";
 import { configUpdateForm } from "./configForm";
-import { BookContainer } from "./styles";
+import { BooksContainer } from "./styles";
 import { useBook } from "../../hooks/useBook"
 import { deleteBookAction, updateBookAction } from "../../redux/actions/booksActions";
 import { getBookId } from "../../utils/functions";
@@ -32,7 +32,8 @@ const BookPage = () => {
     }
 
     dispatch<any>(updateBookAction(bookId, newBook))
-  }, [dispatch, bookId]);
+    setTimeout(() => navigate("/"), 1000)
+  }, [dispatch, bookId, navigate]);
 
   const handleDelete = () => {
     dispatch<any>(deleteBookAction(bookId))
@@ -41,14 +42,14 @@ const BookPage = () => {
 
   return (
     <PageLayout>
-      <BookContainer className="Main">
-        <h1>{currentBook.title}</h1>
-        <BookCover
-          title={currentBook.title}
-          cover={currentBook.book_cover}
-          id={currentBook.id}
-        />
+      <BooksContainer className="Main">
 
+        <div>
+          <h2>{currentBook.title}</h2>
+          <img src={currentBook.book_cover} alt={currentBook.title} loading="lazy"/>
+          <h4>{currentBook.id}</h4>
+        </div>
+          
         {bookBelongsToUser && (
           <div>
             <Button onClick={handleDelete}>Delete Book</Button>
@@ -56,11 +57,12 @@ const BookPage = () => {
               tag={"Update your book!"}
               config={configUpdateForm}
               inputs={[bookTitle, bookDescription, bookYear, bookCover]}
-             handleSubmit={handleUpdate}
+              handleSubmit={handleUpdate}
             />
           </div>
         )}
-      </BookContainer>
+        
+      </BooksContainer>
     </PageLayout>
   );
 };

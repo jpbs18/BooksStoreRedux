@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const BookContainer = styled.div`
+export const BooksContainer = styled.div`
     img{
         width:20%
     }

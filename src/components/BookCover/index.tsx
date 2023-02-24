@@ -6,10 +6,12 @@ const BookCover = ({ title, cover, id }: BookCoverProps) => {
   const navigate = useNavigate()
 
   return (
-    <BookContainer onClick={() => navigate(`book/${id}`)}>
-      <img src={cover} alt={title} loading="lazy"/>
+    <div>
+      <BookContainer onClick={() => navigate(`book/${id}`)}>
+        <img src={cover} alt={title} loading="lazy"/>
+      </BookContainer>
       <p>{title}</p>
-    </BookContainer>
+    </div>
   );
 };
 
